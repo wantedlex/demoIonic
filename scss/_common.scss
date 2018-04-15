@@ -1,0 +1,25 @@
+.padding_22px_side {
+  padding-left: 22px;
+  padding-right: 22px;
+}
+
+.padding_10px_updown {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.margin_10px_updown {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.border_list_item {
+  border-bottom: #ddd 2px solid;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+}
+
+.border_list_item:last-child{
+    border-bottom: none;
+}

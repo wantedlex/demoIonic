@@ -1,15 +1,49 @@
+ion-content {
+  .title {
+    font-size: 30pt;
+    color: #296ad4;
+    font-family: $fontClassic;
+    line-height: 40px;
+    margin-top: 35px;
+    margin-bottom: 0px;
+    font-weight: 900;
+  }
 
-ion-header{
+  .subtitle {
+    font-size: 14pt;
+    color: #205ac4;
+    font-family: $fontThin;
+    margin-bottom: 30px;
+  }
+}
 
+
+ion-list{
+    .list{
+        @extend .padding_22px_side;
+
+        border: none;
+
+        ion-item.item{
+            @extend .border_list_item;
+        }
+    }
+}
+
+
+.bottoniera{
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
     
-    p {
-        font-size: 20pt;
-        color: #296ad4;
-        
-    }
 
-    p + p {
-        font-size: 16pt;
-        color: #205ac4;
+    button{
+        &.add_item{
+            border-radius: 50%;
+            font-size:30pt;
+            z-index: 999;
+        }
     }
+    
 }

@@ -15,13 +15,70 @@ $assertive:                       #ef473a !default;
 $royal:                           #886aea !default;
 $dark:                            #444 !default;
 */
-ion-header p {
-  font-size: 20pt;
-  color: #296ad4; }
+@font-face {
+  font-family: GothamLight;
+  src: url("../assets/fonts/GothamLight.ttf") format("ttf"); }
 
-ion-header p + p {
-  font-size: 16pt;
-  color: #205ac4; }
+@font-face {
+  font-family: GothamThin;
+  src: url("../assets/fonts/Gotham-Thin.otf"); }
+
+@font-face {
+  font-family: GothamExtraLight;
+  src: url("../assets/fonts/Gotham-XLight.otf"); }
+
+@font-face {
+  font-family: GothamBook;
+  src: url("../assets/fonts/GothamBook.ttf") format("ttf"); }
+
+.padding_22px_side, ion-list .list {
+  padding-left: 22px;
+  padding-right: 22px; }
+
+.padding_10px_updown {
+  padding-top: 10px;
+  padding-bottom: 10px; }
+
+.margin_10px_updown {
+  margin-top: 10px;
+  margin-bottom: 10px; }
+
+.border_list_item, ion-list .list ion-item.item {
+  border-bottom: #ddd 2px solid;
+  border-top: none;
+  border-left: none;
+  border-right: none; }
+
+.border_list_item:last-child, ion-list .list ion-item.item:last-child {
+  border-bottom: none; }
+
+ion-content .title {
+  font-size: 30pt;
+  color: #296ad4;
+  font-family: Gotham-Book;
+  line-height: 40px;
+  margin-top: 35px;
+  margin-bottom: 0px;
+  font-weight: 900; }
+
+ion-content .subtitle {
+  font-size: 14pt;
+  color: #205ac4;
+  font-family: Gotham-Thin;
+  margin-bottom: 30px; }
+
+ion-list .list {
+  border: none; }
+
+.bottoniera {
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end; }
+  .bottoniera button.add_item {
+    border-radius: 50%;
+    font-size: 30pt;
+    z-index: 999; }
 
 /*!
   Ionicons, v2.0.1

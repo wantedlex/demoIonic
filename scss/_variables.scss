@@ -1,5 +1,29 @@
+// Va capito come andare a mettere un font size senza installarlo sulla macchina    
+
+
+//Font face
+@font-face{
+    font-family: GothamLight;
+    src: url('../assets/fonts/GothamLight.ttf') format('ttf');
+}
+
+@font-face{
+    font-family: GothamThin;
+    src: url('../assets/fonts/Gotham-Thin.otf');
+}
+
+@font-face{
+    font-family: GothamExtraLight;
+    src: url('../assets/fonts/Gotham-XLight.otf');
+}
+
+@font-face{
+    font-family: GothamBook;
+    src: url('../assets/fonts/GothamBook.ttf') format('ttf');
+}
+
 //Fonts
-$fontLight: url('./../docs/fonts/GothamLight.ttf');
-$fontThin: url('./../docs/fonts/Gotham-Thin.otf');
-$fontXtrLight: url('./../docs/fonts/Gotham-XLight.otf');
-$fontClassic: url('./../docs/fonts/GothamBook.ttf');
+$fontLight: Gotham-Light;
+$fontThin: Gotham-Thin;
+$fontXtrLight: Gotham-XLight;
+$fontClassic: Gotham-Book;
