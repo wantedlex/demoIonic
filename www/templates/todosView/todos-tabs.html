@@ -3,23 +3,14 @@
     <ion-content>
         <p class="title padding_22px_side margin_10px_updown">Lista delle cose da fare</p>
         <p class="subtitle padding_22px_side margin_10px_updown">Segnati quello che hai da fare per non dimenticarti</p>
-        <ion-list class="">
-                <ion-item>dads</ion-item>
-                <ion-item>dads</ion-item>
-                <ion-item>dads</ion-item>
-                <ion-item>dads</ion-item>
-                <ion-item>dads</ion-item>
-                <ion-item>dads</ion-item>
-                <ion-item>dads</ion-item>
-                <ion-item>dads</ion-item>
-                <ion-item>dads</ion-item>
-                <ion-item>dads</ion-item>
-                <ion-item>dads</ion-item>
-                <ion-item>dads</ion-item>
-            
+        <div ng-if="ctrlTodos.todosCommits == 0" class="no_commit padding_22px_side">
+            Non hai nulla da fare
+        </div>
+        <ion-list class="" ng-if="ctrlTodos.todosCommits">
+                <ion-item ng-repeat="item in ctrlTodos.todosCommits">{{item}}</ion-item>
         </ion-list>
         <div class="bottoniera padding_22px_side">
-            <button class="button icon button-balanced add_item">
+            <button class="button icon button-balanced add_item" ng-click="ctrlTodos.addItems()">
                 <i class="icon ion-plus"></i>
             </button>
         </div>

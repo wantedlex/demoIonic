@@ -67,18 +67,26 @@ ion-content .subtitle {
   font-family: Gotham-Thin;
   margin-bottom: 30px; }
 
-ion-list .list {
-  border: none; }
+ion-content .no_commit {
+  font-size: 18pt;
+  color: #AAA;
+  font-family: Gotham-Light;
+  display: flex;
+  justify-content: center;
+  margin-top: 20vh; }
 
-.bottoniera {
+ion-content .bottoniera {
   width: 100vw;
   display: flex;
   flex-direction: row;
   justify-content: flex-end; }
-  .bottoniera button.add_item {
+  ion-content .bottoniera button.add_item {
     border-radius: 50%;
     font-size: 30pt;
     z-index: 999; }
+
+ion-list .list {
+  border: none; }
 
 /*!
   Ionicons, v2.0.1
