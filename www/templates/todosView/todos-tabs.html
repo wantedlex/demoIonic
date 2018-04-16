@@ -6,11 +6,17 @@
         <div ng-if="ctrlTodos.todosCommits == 0" class="no_commit padding_22px_side">
             Non hai nulla da fare
         </div>
-        <ion-list class="" ng-if="ctrlTodos.todosCommits">
-                <ion-item ng-repeat="item in ctrlTodos.todosCommits" ui-sref="tab.modify">{{item}}</ion-item>
+        <ion-list ng-if="ctrlTodos.todosCommits">
+                <ion-item ng-repeat="item in ctrlTodos.todosCommits" class="item-button-right">
+                    {{item}}
+                    <button class="button button-assertive">
+                        <i class="icon ion-trash-a"></i>
+                    </button>
+                </ion-item>
+
         </ion-list>
         <div class="bottoniera padding_22px_side">
-            <button class="button icon button-balanced add_item" ng-click="ctrlTodos.addItems()">
+            <button class="button icon button-balanced add_item" ng-click="ctrlTodos.addItems()" ui-sref="tab.modify">
                 <i class="icon ion-plus"></i>
             </button>
         </div>
