@@ -84,6 +84,15 @@ angular.module('starter', [
     }
   })
   
+  .state('tab.modify', {
+    url: '/modify',
+    views: {
+      'todos-tabs':{
+        templateUrl: 'templates/todosView/modifyTodosView/modifyTodos-view.html'
+      }
+    }
+  })
+  
   .state('tab.todos', {
     url: '/todos',
     views: {
