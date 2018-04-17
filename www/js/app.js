@@ -30,7 +30,10 @@ angular.module('starter', [
   });
 })
 
-.config(function($stateProvider, $urlRouterProvider) {
+// Attraverso l'uso di $ionicConfigProvider posso andare a a fissare in basso la tabs bar
+.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
+
+  $ionicConfigProvider.tabs.position('bottom');       // ********** POSIZIONA LA TABS BAR IN BASSO *******************
 
   // Ionic uses AngularUI Router which uses the concept of states
   // Learn more here: https://github.com/angular-ui/ui-router
