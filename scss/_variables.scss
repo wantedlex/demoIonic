@@ -3,8 +3,13 @@
 
 //Font face
 @font-face{
-    font-family: GothamLight;
-    src: url('../assets/fonts/GothamLight.ttf') format('ttf');
+    font-family: 'Gotham';
+    src: local('../www/assets/fonts/gothamLight/Gotham-Light'),
+        url('Gotham-Light.woff2') format('woff2'),
+        url('Gotham-Light.woff') format('woff'),
+        url('Gotham-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
 }
 
 @font-face{

@@ -1,3 +1,4 @@
 var moduleService = angular.module('Services', [
-    'Service.Todos'
+    'Service.Todos',
+    'Service.Randomuser'
 ]);

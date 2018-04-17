@@ -1,1 +1,22 @@
+<ion-nav-view view-title="Contatti">
+    <ion-content class="contacts_content">
+        <p class="padding_22px_side margin_10px_updown title">Contatti</p>
+        <p class="subtitle padding_22px_side margin_10px_updown">Tutte le persone a cui tieni</p>
 
+        <ion-list>
+            <ion-item class="item item-thumbnail-left" ng-repeat="item in contactCtrl.listOfContact">
+                <img src="{{item.picture.large}}">
+                <div class="contactName">{{item.name.first}} {{item.name.last}}</div>
+                <div class="numberOfPhone">
+                    {{item.phone}}
+                    <i class="ion-android-call"></i>
+                </div>
+                <div class="numberOfPhone">
+                    {{item.cell}}
+                    <i class="ion-iphone"></i>
+                </div>
+            </ion-item>
+        </ion-list>
+
+    </ion-content>
+</ion-nav-view>

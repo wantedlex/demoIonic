@@ -16,8 +16,10 @@ $royal:                           #886aea !default;
 $dark:                            #444 !default;
 */
 @font-face {
-  font-family: GothamLight;
-  src: url("../assets/fonts/GothamLight.ttf") format("ttf"); }
+  font-family: 'Gotham';
+  src: local("../www/assets/fonts/gothamLight/Gotham-Light"), url("Gotham-Light.woff2") format("woff2"), url("Gotham-Light.woff") format("woff"), url("Gotham-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal; }
 
 @font-face {
   font-family: GothamThin;
@@ -52,16 +54,15 @@ $dark:                            #444 !default;
 .border_list_item:last-child, .todos_content ion-list .list ion-item.item:last-child {
   border-bottom: none; }
 
-.todos_content .title {
+.title {
   font-size: 30pt;
   color: #296ad4;
-  font-family: Gotham-Book;
   line-height: 40px;
   margin-top: 35px;
   margin-bottom: 0px;
   font-weight: 900; }
 
-.todos_content .subtitle {
+.subtitle {
   font-size: 14pt;
   color: #205ac4;
   font-family: Gotham-Thin;
@@ -96,6 +97,14 @@ $dark:                            #444 !default;
     width: 100%;
     position: absolute;
     bottom: 20px; }
+
+.contacts_content ion-list .contactName {
+  font-size: 1.3rem;
+  text-transform: capitalize;
+  margin-bottom: 10px; }
+
+.contacts_content ion-list .numberOfPhone {
+  color: #666; }
 
 /*!
   Ionicons, v2.0.1
