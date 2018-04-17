@@ -1,4 +1,4 @@
-var todosModule = angular.module('TodosModule', []);
+var todosModule = angular.module('TodosModule');
 
 todosModule.config(function($stateProvider){
     $stateProvider
@@ -7,7 +7,7 @@ todosModule.config(function($stateProvider){
       url: '/todos/modify/:indexCommit',
       views: {
         'todos-tabs':{
-          templateUrl: 'templates/todosView/modifyTodosView/modifyTodos-view.html',
+          templateUrl: 'views/todosView/modifyTodos-view.html',
           controller: 'ModifyTodosController as modifyCtrl'
         }
       }
