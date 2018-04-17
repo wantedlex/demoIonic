@@ -1,0 +1,14 @@
+.modifyTodos_content{
+    position: relative;
+
+    .todos_bottoniera{
+        width: 100%;
+        position: absolute;
+        bottom: 20px;
+    }
+
+    .todos_label_input{
+        @extend .list_item;
+    }
+
+}

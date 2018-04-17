@@ -31,7 +31,7 @@ $dark:                            #444 !default;
   font-family: GothamBook;
   src: url("../assets/fonts/GothamBook.ttf") format("ttf"); }
 
-.padding_22px_side, ion-list .list {
+.padding_22px_side, .todos_content ion-list .list {
   padding-left: 22px;
   padding-right: 22px; }
 
@@ -43,16 +43,16 @@ $dark:                            #444 !default;
   margin-top: 10px;
   margin-bottom: 10px; }
 
-.border_list_item, ion-list .list ion-item.item {
+.list_item, .border_list_item, .todos_content ion-list .list ion-item.item, .modifyTodos_content .todos_label_input {
   border-bottom: #ddd 2px solid;
   border-top: none;
   border-left: none;
   border-right: none; }
 
-.border_list_item:last-child, ion-list .list ion-item.item:last-child {
+.border_list_item:last-child, .todos_content ion-list .list ion-item.item:last-child {
   border-bottom: none; }
 
-ion-content .title {
+.todos_content .title {
   font-size: 30pt;
   color: #296ad4;
   font-family: Gotham-Book;
@@ -61,13 +61,13 @@ ion-content .title {
   margin-bottom: 0px;
   font-weight: 900; }
 
-ion-content .subtitle {
+.todos_content .subtitle {
   font-size: 14pt;
   color: #205ac4;
   font-family: Gotham-Thin;
   margin-bottom: 30px; }
 
-ion-content .no_commit {
+.todos_content .no_commit {
   font-size: 18pt;
   color: #AAA;
   font-family: Gotham-Light;
@@ -75,18 +75,27 @@ ion-content .no_commit {
   justify-content: center;
   margin-top: 20vh; }
 
-ion-content .bottoniera {
+.todos_content .bottoniera {
   width: 100vw;
   display: flex;
   flex-direction: row;
   justify-content: flex-end; }
-  ion-content .bottoniera button.add_item {
+  .todos_content .bottoniera button.add_item {
     border-radius: 50%;
     font-size: 30pt;
     z-index: 999; }
 
-ion-list .list {
+.todos_content ion-list .list {
   border: none; }
+  .todos_content ion-list .list ion-item.item {
+    padding-right: 0px; }
+
+.modifyTodos_content {
+  position: relative; }
+  .modifyTodos_content .todos_bottoniera {
+    width: 100%;
+    position: absolute;
+    bottom: 20px; }
 
 /*!
   Ionicons, v2.0.1

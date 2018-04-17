@@ -9,7 +9,8 @@ angular.module('starter', [
   'ionic', 
   'starter.controllers', 
   'starter.services', 
-  'Services'
+  'Services',
+  'TodosModule'
 ])
 
 .run(function($ionicPlatform) {
@@ -80,15 +81,6 @@ angular.module('starter', [
       'tab-account': {
         templateUrl: 'templates/tab-account.html',
         controller: 'AccountCtrl'
-      }
-    }
-  })
-  
-  .state('tab.modify', {
-    url: '/todos/modify',
-    views: {
-      'todos-tabs':{
-        templateUrl: 'templates/todosView/modifyTodosView/modifyTodos-view.html'
       }
     }
   })

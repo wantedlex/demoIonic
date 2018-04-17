@@ -5,5 +5,14 @@
             <ion-nav-title>Modifica</ion-nav-title>
         </ion-nav-bar>
     </ion-header>
-    <ion-content>QUesta è una modifica</ion-content>
+    <ion-content scroll="false" class="modifyTodos_content">
+        <div class="margin_10px_updown padding_22px_side">
+            <label class="item item-input todos_label_input">
+                <input type="text" placeholder="Cosa devo ricordarti?" ng-model="modifyCtrl.textInputNameCommit">
+            </label>
+        </div>
+        <div class="todos_bottoniera padding_22px_side">
+            <button class="button button-balanced button-block add_element_button" ng-click="modifyCtrl.buttonActionAccept()">{{modifyCtrl.labelButtonAdd}}</button>
+        </div>
+    </ion-content>
 </ion-view>

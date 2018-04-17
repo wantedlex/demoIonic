@@ -1,22 +1,22 @@
 <ion-nav-view view-title="To Do List">
 
-    <ion-content>
+    <ion-content class="todos_content">
         <p class="title padding_22px_side margin_10px_updown">Lista delle cose da fare</p>
         <p class="subtitle padding_22px_side margin_10px_updown">Segnati quello che hai da fare per non dimenticarti</p>
         <div ng-if="ctrlTodos.todosCommits == 0" class="no_commit padding_22px_side">
             Non hai nulla da fare
         </div>
         <ion-list ng-if="ctrlTodos.todosCommits">
-                <ion-item ng-repeat="item in ctrlTodos.todosCommits" class="item-button-right">
+                <ion-item ng-repeat="item in ctrlTodos.todosCommits" class="item item-button-right" ui-sref="tab.modify({indexCommit: $index})">
                     {{item}}
-                    <button class="button button-assertive">
+                    <button class="button button-assertive" ng-click="ctrlTodos.removeCommit($index)">
                         <i class="icon ion-trash-a"></i>
                     </button>
                 </ion-item>
 
         </ion-list>
         <div class="bottoniera padding_22px_side">
-            <button class="button icon button-balanced add_item" ng-click="ctrlTodos.addItems()" ui-sref="tab.modify">
+            <button class="button icon button-balanced add_item" ui-sref="tab.modify({indexCommit: -1})">
                 <i class="icon ion-plus"></i>
             </button>
         </div>

@@ -13,11 +13,16 @@
   margin-bottom: 10px;
 }
 
-.border_list_item {
+.list_item{
   border-bottom: #ddd 2px solid;
   border-top: none;
   border-left: none;
   border-right: none;
+}
+
+
+.border_list_item {
+  @extend .list_item;
 }
 
 .border_list_item:last-child{

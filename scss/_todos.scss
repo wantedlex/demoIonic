@@ -1,4 +1,4 @@
-ion-content {
+.todos_content {
   .title {
     font-size: 30pt;
     color: #296ad4;
@@ -40,17 +40,20 @@ ion-content {
     }
   }
   
-}
 
-ion-list {
-  .list {
-    @extend .padding_22px_side;
-
-    border: none;
-
-    ion-item.item {
-      @extend .border_list_item;
+  ion-list {
+    .list {
+      @extend .padding_22px_side;
+  
+      border: none;
+  
+      ion-item.item {
+        @extend .border_list_item;
+        padding-right: 0px;         // Ho dovuto forzare perché veniva dato come padding-right 80px da una classe ionic
+      }
     }
   }
 }
+
+
 
