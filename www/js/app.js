@@ -11,7 +11,8 @@ angular.module('starter', [
   'starter.services', 
   'Services',
   'TodosModule',
-  'ContactModule'
+  'ContactModule',
+  'MeteoModule'
 ])
 
 .run(function($ionicPlatform) {
@@ -50,16 +51,6 @@ angular.module('starter', [
 
   // Each tab has its own nav history stack:
 
-  .state('tab.dash', {
-    url: '/dash',
-    views: {
-      'tab-dash': {
-        templateUrl: 'templates/tab-dash.html',
-        controller: 'DashCtrl'
-      }
-    }
-  })
-
   .state('tab.chats', {
       url: '/chats',
       views: {
@@ -90,6 +81,6 @@ angular.module('starter', [
   });
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/tab/dash');
+  $urlRouterProvider.otherwise('/tab/meteo');
 
 });

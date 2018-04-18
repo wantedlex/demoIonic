@@ -70,13 +70,20 @@ $dark:                            #444 !default;
 .spinner-wrapper {
   width: 100%;
   height: 100vh;
-  background: red;
   z-index: 9999;
   position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
   background: rgba(200, 200, 200, 0.5); }
+  .spinner-wrapper ion-spinner svg {
+    stroke: #205ac4; }
+
+.scroll-refresher .ionic-refresher-content.ionic-refresher-with-text {
+  color: #205ac4;
+  font-family: "GothamThin"; }
+  .scroll-refresher .ionic-refresher-content.ionic-refresher-with-text svg {
+    stroke: #205ac4; }
 
 .todos_content .no_commit {
   font-size: 18pt;
