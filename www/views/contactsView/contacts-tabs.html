@@ -1,5 +1,11 @@
 <ion-view view-title="Contatti">
+
+    <div class="spinner-wrapper" ng-if="contactCtrl.loading">
+        <ion-spinner></ion-spinner>
+    </div>
+
     <ion-content class="contacts_content">
+        <ion-refresher pulling-text="Trascina verso il basso per aggiornare..." on-refresh="contactCtrl.refreshContactList()"></ion-refresher>
         <p class="padding_22px_side margin_10px_updown title">Contatti</p>
         <p class="subtitle padding_22px_side margin_10px_updown">Tutte le persone a cui tieni</p>
 

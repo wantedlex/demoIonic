@@ -3,32 +3,27 @@
 
 //Font face
 @font-face{
-    font-family: 'Gotham';
-    src: local('../www/assets/fonts/gothamLight/Gotham-Light'),
-        url('Gotham-Light.woff2') format('woff2'),
-        url('Gotham-Light.woff') format('woff'),
-        url('Gotham-Light.ttf') format('truetype');
-    font-weight: 300;
-    font-style: normal;
+    font-family: 'GothamLight';
+    src: url('../assets/fonts/GothamLight.ttf');
 }
 
 @font-face{
-    font-family: GothamThin;
+    font-family: 'GothamThin';
     src: url('../assets/fonts/Gotham-Thin.otf');
 }
 
 @font-face{
-    font-family: GothamExtraLight;
+    font-family: 'GothamExtraLight';
     src: url('../assets/fonts/Gotham-XLight.otf');
 }
 
 @font-face{
-    font-family: GothamBook;
-    src: url('../assets/fonts/GothamBook.ttf') format('ttf');
+    font-family: 'GothamBook';
+    src: url('../assets/fonts/GothamBook.ttf');
 }
 
 //Fonts
-$fontLight: Gotham-Light;
-$fontThin: Gotham-Thin;
-$fontXtrLight: Gotham-XLight;
-$fontClassic: Gotham-Book;
+$fontLight: 'GothamLight';
+$fontThin: 'GothamThin';
+$fontXtrLight: 'GothamExtraLight';
+$fontClassic: 'GothamBook';
