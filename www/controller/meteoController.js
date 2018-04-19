@@ -29,7 +29,7 @@ meteoModule.controller('MeteoController', function(GeolocationService, WeatherSe
     vm.city = 'Milano, MI, Italia';
 
     vm.init = function(){
-        GeolocationService.getPosition().then( function (result){ console.log(_logPrefix + result);}).catch(console.log('asdasda'));
+        GeolocationService.getPosition().then( function (result){ vm.loading = false; console.log(_logPrefix + result);}).catch(console.log('asdasda'));
 
         // GeolocationService.getPosition()
         //     .then( function(coordinateAttuali){
