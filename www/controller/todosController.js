@@ -14,7 +14,7 @@ todosController.config(function($stateProvider) {
 });
 
 
-todosController.controller('TodosController', function($log, TodosService, $q){
+todosController.controller('TodosController', function($log, TodosService, $q, $rootScope, $window){
     this.todosCommits = TodosService.getCommits();
 
     this.addItems = function(){
@@ -24,4 +24,13 @@ todosController.controller('TodosController', function($log, TodosService, $q){
     this.removeCommit = function(index){
         TodosService.deleteCommit(index);
     };
+
+    $rootScope.$on('updateTodos', function(){
+        //this.todosCommits = TodosService.getCommits();            // Per quanto possa essere brutta, non sono riuscito a farlo aggiornare
+        $window.location.reload(true);                              // devo pensarci.
+    });
+    // $scope.$on('$ionicView.enter', function(){
+    //     alert();
+    // })
+
 });

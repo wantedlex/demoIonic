@@ -15,7 +15,7 @@ todosModule.config(function($stateProvider){
 });
 
 
-todosModule.controller('ModifyTodosController', function($log, $stateParams, TodosService, $state){
+todosModule.controller('ModifyTodosController', function($log, $stateParams, TodosService, $state, $rootScope){
   //Variabili del controller
   var indexCommit = $stateParams.indexCommit;
   var _logPrefix = '[CONTROLLER MODIFICA]';
@@ -49,6 +49,7 @@ todosModule.controller('ModifyTodosController', function($log, $stateParams, Tod
     $log.debug(_logPrefix + 'Modifica', this);
     TodosService.modifyCommit(indexCommit, this.textInputNameCommit);
     $state.go('tab.todos');
+    $rootScope.$emit('updateTodos');
   };
 
 
