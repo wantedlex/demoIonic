@@ -21,7 +21,7 @@ meteoModule.controller('MeteoController', function(){
     
     //Definizione variabili di controller esposte alla view
     var vm = this;
-    vm.loading = true;
+    vm.loading = false;
 
 });
 

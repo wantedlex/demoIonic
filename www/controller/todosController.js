@@ -14,23 +14,22 @@ todosController.config(function($stateProvider) {
 });
 
 
-todosController.controller('TodosController', function($log, TodosService, $q, $rootScope, $window){
-    this.todosCommits = TodosService.getCommits();
+todosController.controller('TodosController', function($log, TodosService, $q, $scope, $window){
+    var vm = this;                                                      // Se non metto questo vm qua, quando ritorno dalla pagina di modifica succede che lo scope 
+                                                                        // non si aggiorna e l'array non viene modificato. In questo modo l'array si modifica.
+    // Variabili esposte alla view
+    vm.todosCommits = TodosService.getCommits();
 
-    this.addItems = function(){
+    vm.addItems = function(){
         TodosService.newCommit('Commit' + this.todosCommits.length);
     };
 
-    this.removeCommit = function(index){
+    vm.removeCommit = function(index){
         TodosService.deleteCommit(index);
     };
 
-    $rootScope.$on('updateTodos', function(){
-        //this.todosCommits = TodosService.getCommits();            // Per quanto possa essere brutta, non sono riuscito a farlo aggiornare
-        $window.location.reload(true);                              // devo pensarci.
-    });
-    // $scope.$on('$ionicView.enter', function(){
-    //     alert();
-    // })
 
+    $scope.$on('$ionicView.enter', function(){
+        vm.todosCommits = TodosService.getCommits(); 
+    });
 });
