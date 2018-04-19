@@ -1,11 +1,19 @@
-<ion-view view-title="Meteo">
+<ion-view view-title="Meteo" class="meteo-view">
     <!-- Loading -->
     <div class="spinner-wrapper" ng-if="meteoCtrl.loading">
         <ion-spinner icon="ripple"></ion-spinner>
     </div>
 
     <ion-content>
-        
+        <ion-refresher 
+            class="refresher-custom"  
+            pulling-text="Trascina verso il basso per aggiornare..." 
+            on-refresh="contactCtrl.refreshContactList()"
+            spinner="ripple"></ion-refresher>
+        <p class="padding_22px_side margin_10px_updown title">Meteo</p>
+        <p class="subtitle padding_22px_side margin_10px_updown">{{meteoCtrl.city}}</p>
 
     </ion-content>
+
+    <div class="containerBottom"></div>
 </ion-view>

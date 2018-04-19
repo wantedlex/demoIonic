@@ -121,6 +121,18 @@ $dark:                            #444 !default;
   .contacts_content ion-list .numberOfPhone {
     color: #666; }
 
+.meteo-view .containerBottom {
+  z-index: 1;
+  position: absolute;
+  bottom: 0px;
+  height: 70vh;
+  background: #47a8d9;
+  width: 100%; }
+
+.meteo-view ion-content {
+  z-index: 10;
+  background: transparent; }
+
 /*!
   Ionicons, v2.0.1
   Created by Ben Sperry for the Ionic Framework, http://ionicons.com/
