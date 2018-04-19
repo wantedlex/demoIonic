@@ -18,7 +18,11 @@ meteoModule.config(function($stateProvider){
 
 // Definizione del controller e delle sue funzionalità
 meteoModule.controller('MeteoController', function(){
-    alert('adfsasfgf');
+    
+    //Definizione variabili di controller esposte alla view
+    var vm = this;
+    vm.loading = true;
+
 });
 
 

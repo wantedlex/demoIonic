@@ -31,7 +31,7 @@ $dark:                            #444 !default;
   font-family: 'GothamBook';
   src: url("../assets/fonts/GothamBook.ttf"); }
 
-.padding_22px_side, .todos_content ion-list .list {
+.padding_22px_side, .view-todos .todos_content ion-list .list {
   padding-left: 22px;
   padding-right: 22px; }
 
@@ -43,13 +43,13 @@ $dark:                            #444 !default;
   margin-top: 10px;
   margin-bottom: 10px; }
 
-.list_item, .border_list_item, .todos_content ion-list .list ion-item.item, .modifyTodos_content .todos_label_input {
+.list_item, .border_list_item, .view-todos .todos_content ion-list .list ion-item.item, .modifyTodos_content .todos_label_input {
   border-bottom: #ddd 2px solid;
   border-top: none;
   border-left: none;
   border-right: none; }
 
-.border_list_item:last-child, .todos_content ion-list .list ion-item.item:last-child {
+.border_list_item:last-child, .view-todos .todos_content ion-list .list ion-item.item:last-child {
   border-bottom: none; }
 
 .title {
@@ -85,27 +85,24 @@ $dark:                            #444 !default;
   .scroll-refresher .ionic-refresher-content.ionic-refresher-with-text svg {
     stroke: #205ac4; }
 
-.todos_content .no_commit {
+.view-todos .add_item {
+  border-radius: 50%;
+  font-size: 30pt;
+  position: absolute;
+  bottom: 80px;
+  right: 20px; }
+
+.view-todos .todos_content .no_commit {
   font-size: 18pt;
-  color: #AAA;
+  color: #aaa;
   font-family: "GothamLight";
   display: flex;
   justify-content: center;
   margin-top: 20vh; }
 
-.todos_content .bottoniera {
-  width: 100vw;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end; }
-  .todos_content .bottoniera button.add_item {
-    border-radius: 50%;
-    font-size: 30pt;
-    z-index: 999; }
-
-.todos_content ion-list .list {
+.view-todos .todos_content ion-list .list {
   border: none; }
-  .todos_content ion-list .list ion-item.item {
+  .view-todos .todos_content ion-list .list ion-item.item {
     padding-right: 0px; }
 
 .modifyTodos_content {

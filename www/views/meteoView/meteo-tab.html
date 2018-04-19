@@ -1,7 +1,11 @@
 <ion-view view-title="Meteo">
+    <!-- Loading -->
+    <div class="spinner-wrapper" ng-if="meteoCtrl.loading">
+        <ion-spinner icon="ripple"></ion-spinner>
+    </div>
+
     <ion-content>
-        <div class="spinner-wrapper">
-            <ion-spinner icon="ripple"></ion-spinner>
-        </div>
+        
+
     </ion-content>
 </ion-view>

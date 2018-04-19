@@ -1,42 +1,33 @@
-.todos_content {
-  .no_commit {
-    font-size: 18pt;
-    color: #AAA;
-    font-family: $fontLight;
-    display: flex;
-    justify-content: center;
-    margin-top: 20vh;
+.view-todos {
+  .add_item {
+    border-radius: 50%;
+    font-size: 30pt;
+    position: absolute;
+    bottom: 80px;
+    right: 20px;
   }
 
-  .bottoniera {
-    width: 100vw;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-  
-    button {
-      &.add_item {
-        border-radius: 50%;
-        font-size: 30pt;
-        z-index: 999;
-      }
+  .todos_content {
+    .no_commit {
+      font-size: 18pt;
+      color: #aaa;
+      font-family: $fontLight;
+      display: flex;
+      justify-content: center;
+      margin-top: 20vh;
     }
-  }
-  
 
-  ion-list {
-    .list {
-      @extend .padding_22px_side;
-  
-      border: none;
-  
-      ion-item.item {
-        @extend .border_list_item;
-        padding-right: 0px;         // Ho dovuto forzare perché veniva dato come padding-right 80px da una classe ionic
+    ion-list {
+      .list {
+        @extend .padding_22px_side;
+
+        border: none;
+
+        ion-item.item {
+          @extend .border_list_item;
+          padding-right: 0px; // Ho dovuto forzare perché veniva dato come padding-right 80px da una classe ionic
+        }
       }
     }
   }
 }
-
-
-
