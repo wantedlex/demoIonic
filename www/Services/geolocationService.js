@@ -14,7 +14,7 @@ geolocationModule.factory("GeolocationService", function($log, $q) {
   // Funzione che restituisce un oggetto con le coordinate geografiche attuali
   var getPosition = function() {
     var deferred = $q.defer();
-    if (navigator.geolocation) {
+    if ('geolocation' in navigator) {
       navigator.geolocation.getCurrentPosition(function(posizioneCorrente) {
         var coords = {
           latitudine: posizioneCorrente.coords.latitude,
