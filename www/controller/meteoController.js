@@ -7,7 +7,7 @@ meteoModule.config(function($stateProvider){
         .state('tab.meteo', {
             url: '/meteo',
             views:{
-                'meteo-tabs': {
+                'meteo-tab': {
                     templateUrl: 'views/meteoView/meteo-tab.html',
                     controller: 'MeteoController as meteoCtrl'
                 }
