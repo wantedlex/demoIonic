@@ -1,15 +1,99 @@
-.meteo-view{
-    .containerBottom{
-        z-index:1;
-        position: absolute;
-        bottom: 0px;
-        height: 70vh;
-        background: rgb(71, 168, 217);
-        width: 100%;
+.meteo-view {
+  .containerBottom {
+    z-index: 1;
+    position: absolute;
+    bottom: 0px;
+    height: 70vh;
+    background: rgb(71, 168, 217);
+    width: 100%;
+  }
+
+  ion-content {
+    z-index: 10;
+    background: transparent;
+
+    // Wrapper per l'icona centrale che indica il meteo attuale
+    .icon-weather {
+      display: flex;
+      justify-content: center;
+
+      img {
+        &.sun {
+            width: 20vh;
+            height: 20vh;
+            animation: rotation 10s infinite linear;
+
+            @keyframes rotation {
+                from {
+                    transform: rotate(0deg);
+                }
+                to {
+                    transform: rotate(359deg);
+                }
+            }
+        }
+      }
     }
 
-    ion-content{
-        z-index: 10;
-        background: transparent;
+
+    // Wrapper della sezione meteo
+    .icon-wind-wrapper{
+        display: flex;
+        margin-top: 20px;
+
+        //Wrapper per l'icona del vento
+        .wind-wrapper{
+            margin-left: 20px;
+            width: 10vh;
+
+            img{
+                height: 8vh;
+                width: 8vh;
+                animation: effettoAllungamento 1s infinite alternate;
+    
+                @keyframes effettoAllungamento {
+                    from{
+                        width: 8vh;
+                    }
+                    to{
+                        width: 9vh;
+                    }
+                    
+                }
+            }
+        }
+
+        // Dati da mostrare 
+        .info-wind{
+            display: flex;
+            flex-direction: row;
+            color: whitesmoke;
+            font-family: $fontClassic;
+            font-size: 14pt;
+            align-self: center;
+            margin-left: 20px;
+
+            .title-info{
+                font-weight: bold;
+                margin-right: 10px;
+            }
+        }
+
+
     }
+
+
+
+    // Titolo della sezione meteo
+    .title-weather-condition{
+        color: whitesmoke;
+        margin-top: 10px;
+        margin-left: 20px;
+        margin-bottom: 30px;
+        font-size: 2rem;
+        font-family: $fontThin;
+    }
+  }
 }
+
+// Puoi usare queste icone animate https://codepen.io/noahblon/pen/lxukH quando hai un pò di tempo
