@@ -12,6 +12,7 @@
     "cordova-android": "7.0.0",
     "cordova-ios": "4.5.4",
     "cordova-plugin-device": "^2.0.1",
+    "cordova-plugin-geolocation": "^4.0.1",
     "cordova-plugin-ionic": "^4.1.4",
     "cordova-plugin-ionic-keyboard": "^2.0.5",
     "cordova-plugin-ionic-webview": "^1.2.0",
@@ -32,7 +33,8 @@
         "WARN_DEBUG": "true",
         "UPDATE_API": "https://api.ionicjs.com",
         "MAX_STORE": "2"
-      }
+      },
+      "cordova-plugin-geolocation": {}
     },
     "platforms": [
       "ios",

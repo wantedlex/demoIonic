@@ -14,11 +14,12 @@ meteoServiceModule.factory('WeatherService', function($http, $q, $log){
     var getWeather = function(latitude, longitude){
         var url = ENDPOINT + 'lat=' + latitude + '&lon=' + longitude + APPID;
         var deferred = $q.defer();
+        alert(url);
         
         $http.get(url)
             .then(function(result){
                 $log.debug(_logPrefix + 'Informazioni correttamente ricevute', result);
-                deferred.resolve(result);
+                deferred.resolve(result.data);
             })
             .catch(function(err){
                 $log.debug(_logPrefix + 'Errore nella richiesta delle informazioni', err);

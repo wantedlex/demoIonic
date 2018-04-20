@@ -27,25 +27,30 @@ meteoModule.controller('MeteoController', function(GeolocationService, WeatherSe
     // Definizione variabili di controller esposte alla view
     vm.loading = true;
     vm.city = 'Milano, MI, Italia';
+    vm.weatherDescription = 'Rain';
 
     vm.init = function(){
-        GeolocationService.getPosition().then( function (result){ vm.loading = false; console.log(_logPrefix + result);}).catch(console.log('asdasda'));
+        GeolocationService.getPosition()
+            .then( function (localPosition){                    // Vado a ricavarmi la posizione attuale
+                return WeatherService.getWeather(localPosition.latitudine, localPosition.longitudine);
+            })
+            .then( function(localWeather){                      // Vado a ricavarmi il meteo della posizione attuale ricavata in precedenza
+                vm.loading = false;
+                vm.weatherDescription = localWeather.weather[0].description;
+            })
+            .catch(function(errorLog) {
+                $log.debug(_logPrefix + 'Errore', errorLog);
+            }
+        );
 
-        // GeolocationService.getPosition()
-        //     .then( function(coordinateAttuali){
-        //         return WeatherService.getWeather(coordinateAttuali.latitudine, coordinateAttuali.longitudine);
+        // WeatherService.getWeather(45.509737799999996, 9.232043899999999)
+        //     .then( function(localWeather){                      // Vado a ricavarmi il meteo della posizione attuale ricavata in precedenza
+        //         vm.loading = false;
+        //         $log.debug(_logPrefix + 'localWeather', localWeather);
+        //         alert(localWeather.weather[0].main + '\n' + localWeather.weather[0].description);
         //     })
-        //     .then( function(weatherResult){
-        //         $log.debug(_logPrefix + 'Informazioni Corrette', weatherResult);
-        //         vm.loading = false;
-        //     });
-
-
-        // var coords = GeolocationService.getPosition();
-        // WeatherService.getWeather(coords.latitudine, coords.longitudine)
-        //     .then(function(weatherResult){
-        //         $log.debug(_logPrefix + 'Informazioni Corrette', weatherResult);
-        //         vm.loading = false;
+        //     .catch(function(errorLog) {
+        //         $log.debug(_logPrefix + 'Errore', errorLog);
         //     });
     };
 

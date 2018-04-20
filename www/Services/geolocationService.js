@@ -14,12 +14,13 @@ geolocationModule.factory("GeolocationService", function($log, $q) {
   // Funzione che restituisce un oggetto con le coordinate geografiche attuali
   var getPosition = function() {
     var deferred = $q.defer();
-    if ('geolocation' in navigator) {
+    if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(function(posizioneCorrente) {
         var coords = {
           latitudine: posizioneCorrente.coords.latitude,
           longitudine: posizioneCorrente.coords.longitude
         };
+        $log.debug(_logPrefix);
         deferred.resolve(coords);
       }, function(erroreGeolocalizzazione){
             deferred.reject(erroreGeolocalizzazione);
