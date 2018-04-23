@@ -30,7 +30,8 @@ meteoModule.controller('MeteoController', function(GeolocationService, WeatherSe
     vm.weatherDescription = 'Rain';
     vm.speedOfWind = 0;
     vm.degOfWind = 0;
-
+    vm.humidity = 0;
+    vm.pressure = 0;
 
     // Funzione di inizializzazione
     vm.init = function(){
@@ -43,6 +44,8 @@ meteoModule.controller('MeteoController', function(GeolocationService, WeatherSe
                 vm.weatherDescription = localWeather.weather[0].description;
                 vm.speedOfWind = localWeather.wind.speed;
                 vm.degOfWind = localWeather.wind.deg;
+                vm.humidity = localWeather.main.humidity;
+                vm.pressure = localWeather.main.pressure;
             })
             .catch(function(errorLog) {
                 $log.debug(_logPrefix + 'Errore', errorLog);

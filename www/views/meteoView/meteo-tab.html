@@ -22,9 +22,9 @@
         <div class="title-weather-condition">
             Vento
         </div>
-        <div class="icon-wind-wrapper">
+        <div class="weather-wrapper">
             <div class="wind-wrapper">
-                <img src="img/weatherIcon/icons8-wind-100.png" alt="Wind-image" class="wind">
+                <img src="img/weatherIcon/icons8-wind-100.png" alt="Wind-image">
             </div>
             <div class="weather-info">
                 <div class="weather-item">
@@ -32,8 +32,28 @@
                     <div>{{meteoCtrl.speedOfWind}} m/s</div>
                 </div>
                 <div class="weather-item">
-                    <div class="title-info">Angolo:</div>
-                    <div>{{meteoCtrl.degOfWind}}</div>
+                    <div class="title-info">Angolo: (deg)</div>
+                    <div>{{meteoCtrl.degOfWind}}°</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sezione confort ambientale -->
+        <div class="title-weather-condition">
+            Confort ambientale
+        </div>
+        <div class="weather-wrapper">
+            <div class="humidity-wrapper">
+                <img src="img/weatherIcon/icons8-water-100.png" alt="drop-image" >
+            </div>
+            <div class="weather-info">
+                <div class="weather-item">
+                    <div class="title-info">Umidità: (%)</div>
+                    <div>{{meteoCtrl.humidity}}%</div>
+                </div>
+                <div class="weather-item">
+                    <div class="title-info">Pressione: (hpa)</div>
+                    <div>{{meteoCtrl.pressure}} hpa</div>
                 </div>
             </div>
         </div>

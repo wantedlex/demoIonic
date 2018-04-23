@@ -37,13 +37,14 @@
 
 
     // Wrapper della sezione meteo
-    .icon-wind-wrapper{
+    .weather-wrapper{
         display: flex;
-        margin-top: 20px;
+        margin: 0px 20px 50px 20px;
+        border-bottom: thin solid whitesmoke;
+        padding-bottom: 20px;
 
         //Wrapper per l'icona del vento
         .wind-wrapper{
-            margin-left: 20px;
             width: 10vh;
 
             img{
@@ -63,24 +64,47 @@
             }
         }
 
-        // Dati da mostrare 
-        .weather-info{
-            .weather-item{
-            display: flex;
-            flex-direction: row;
-            color: whitesmoke;
-            font-family: $fontClassic;
-            font-size: 14pt;
-            align-self: center;
-            margin-left: 20px;
+        //Wrapper dell'icona dell'umidità
+        .humidity-wrapper{
+            overflow: hidden;
+            
+            img{
+                width: 8vh;
+                animation: effettoCadutaGoccia 3s infinite linear;
+                position: relative;
 
-            .title-info{
-                font-weight: bold;
-                margin-right: 10px;
+                @keyframes effettoCadutaGoccia {
+                    from{
+                        top: -12vh;
+                    }
+                    to{
+                        top: 12vh;
+                    }
+                    
+                }
             }
         }
-        }
 
+        // Dati da mostrare 
+       .weather-info{
+            display: flex;
+            flex-direction: column;
+            margin-left: 20px;
+            justify-content: space-evenly;
+
+            .weather-item {
+                display: flex;
+                flex-direction: row;
+                color: whitesmoke;
+                font-size: 14pt;
+                font-family: $fontClassic; //"Helvetica Neue", "Roboto", "Segoe UI", sans-serif;  // Nell'attesa di capire perché Gotham non va
+
+                .title-info{
+                    font-weight: bold;
+                    margin-right: 10px;
+                }
+            }
+        }
 
     }
 
