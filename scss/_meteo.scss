@@ -64,7 +64,8 @@
         }
 
         // Dati da mostrare 
-        .info-wind{
+        .weather-info{
+            .weather-item{
             display: flex;
             flex-direction: row;
             color: whitesmoke;
@@ -77,6 +78,7 @@
                 font-weight: bold;
                 margin-right: 10px;
             }
+        }
         }
 
 

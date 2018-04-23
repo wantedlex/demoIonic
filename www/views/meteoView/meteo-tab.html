@@ -6,15 +6,11 @@
 
     <ion-content>
         <!-- Refresher -->
-        <ion-refresher 
-            class="refresher-custom" 
-            pulling-text="Trascina verso il basso per aggiornare..." 
-            on-refresh=""
-            spinner="ripple">
+        <ion-refresher class="refresher-custom" pulling-text="Trascina verso il basso per aggiornare..." on-refresh="" spinner="ripple">
         </ion-refresher>
 
         <!-- Titolo-->
-        <p class="padding_22px_side margin_10px_updown title">{{meteoCtrl.weatherDescription}}</p>
+        <p class="padding_22px_side margin_10px_updown title capitalizzazione">{{meteoCtrl.weatherDescription}}</p>
         <p class="subtitle padding_22px_side margin_10px_updown">{{meteoCtrl.city}}</p>
 
         <!-- Icona meteo attuale-->
@@ -30,12 +26,18 @@
             <div class="wind-wrapper">
                 <img src="img/weatherIcon/icons8-wind-100.png" alt="Wind-image" class="wind">
             </div>
-            <div class="info-wind">
+            <div class="weather-info">
+                <div class="weather-item">
                     <div class="title-info">Velocità (m/s):</div>
                     <div>{{meteoCtrl.speedOfWind}} m/s</div>
                 </div>
-            </div>     
+                <div class="weather-item">
+                    <div class="title-info">Angolo:</div>
+                    <div>{{meteoCtrl.degOfWind}}</div>
+                </div>
+            </div>
         </div>
+
     </ion-content>
 
     <div class="containerBottom"></div>

@@ -29,6 +29,7 @@ meteoModule.controller('MeteoController', function(GeolocationService, WeatherSe
     vm.city = 'Milano, MI, Italia';
     vm.weatherDescription = 'Rain';
     vm.speedOfWind = 0;
+    vm.degOfWind = 0;
 
 
     // Funzione di inizializzazione
@@ -41,6 +42,7 @@ meteoModule.controller('MeteoController', function(GeolocationService, WeatherSe
                 vm.loading = false;
                 vm.weatherDescription = localWeather.weather[0].description;
                 vm.speedOfWind = localWeather.wind.speed;
+                vm.degOfWind = localWeather.wind.deg;
             })
             .catch(function(errorLog) {
                 $log.debug(_logPrefix + 'Errore', errorLog);

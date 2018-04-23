@@ -85,6 +85,9 @@ $dark:                            #444 !default;
   .scroll-refresher .ionic-refresher-content.ionic-refresher-with-text svg {
     stroke: #205ac4; }
 
+.capitalizzazione {
+  text-transform: capitalize; }
+
 .view-todos .add_item {
   border-radius: 50%;
   font-size: 30pt;
@@ -161,7 +164,7 @@ $dark:                            #444 !default;
     width: 8vh; }
   to {
     width: 9vh; } }
-    .meteo-view ion-content .icon-wind-wrapper .info-wind {
+    .meteo-view ion-content .icon-wind-wrapper .weather-info .weather-item {
       display: flex;
       flex-direction: row;
       color: whitesmoke;
@@ -169,7 +172,7 @@ $dark:                            #444 !default;
       font-size: 14pt;
       align-self: center;
       margin-left: 20px; }
-      .meteo-view ion-content .icon-wind-wrapper .info-wind .title-info {
+      .meteo-view ion-content .icon-wind-wrapper .weather-info .weather-item .title-info {
         font-weight: bold;
         margin-right: 10px; }
   .meteo-view ion-content .title-weather-condition {

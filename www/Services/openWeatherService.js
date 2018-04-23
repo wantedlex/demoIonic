@@ -7,13 +7,14 @@ meteoServiceModule.factory('WeatherService', function($http, $q, $log){
     var ENDPOINT = 'http://api.openweathermap.org/data/2.5/weather?';               // Ricordati sempre di mettere l'http altrimenti potrebbe non funzionare
     var APPID = '&APPID=ee6b293d773f4fcd7e434f79bbc341f2';
     var LANGUAGE = '&lang=it';
+    var FORMAT = '&units=metric';
     var _logPrefix = '[WEATHERSERVICE]';
 
 
 
     // Funzione che va a fare la richiesta del meteo dal servizio http
     var getWeather = function(latitude, longitude){
-        var url = ENDPOINT + 'lat=' + latitude + '&lon=' + longitude + APPID + LANGUAGE;
+        var url = ENDPOINT + 'lat=' + latitude + '&lon=' + longitude + APPID + LANGUAGE + FORMAT;
         var deferred = $q.defer();
         
         $http.get(url)
