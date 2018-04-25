@@ -32,6 +32,9 @@ meteoModule.controller('MeteoController', function(GeolocationService, WeatherSe
     vm.degOfWind = 0;
     vm.humidity = 0;
     vm.pressure = 0;
+    vm.temperature = 0;
+    vm.minTemperature = 0;
+    vm.maxTemperature = 0;
 
     // Recupero informazioni da mostrare nella view
     vm.loadWeatherInformation = function(){
@@ -46,6 +49,9 @@ meteoModule.controller('MeteoController', function(GeolocationService, WeatherSe
                 vm.degOfWind = localWeather.wind.deg;
                 vm.humidity = localWeather.main.humidity;
                 vm.pressure = localWeather.main.pressure;
+                vm.temperature = Math.floor(localWeather.main.temp);
+                vm.minTemperature = Math.floor(localWeather.main.temp_min);
+                vm.maxTemperature = Math.floor(localWeather.main.temp_max);
             })
             .catch(function(errorLog) {
                 $log.debug(_logPrefix + 'Errore', errorLog);

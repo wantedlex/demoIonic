@@ -153,12 +153,28 @@ $dark:                            #444 !default;
     margin: 0px 20px 50px 20px;
     border-bottom: thin solid whitesmoke;
     padding-bottom: 40px; }
+    .meteo-view ion-content .weather-wrapper .temp-wrapper {
+      width: 10vh;
+      height: 10vh;
+      display: flex; }
+      .meteo-view ion-content .weather-wrapper .temp-wrapper img {
+        height: 8vh;
+        width: 8vh;
+        animation: effettoZoom 2s infinite alternate; }
+
+@keyframes effettoZoom {
+  from {
+    width: 8vh;
+    height: 8vh; }
+  to {
+    width: 9vh;
+    height: 9vh; } }
     .meteo-view ion-content .weather-wrapper .wind-wrapper {
       width: 10vh; }
       .meteo-view ion-content .weather-wrapper .wind-wrapper img {
         height: 8vh;
         width: 8vh;
-        animation: effettoAllungamento 1s infinite alternate; }
+        animation: effettoAllungamento 2s infinite alternate; }
 
 @keyframes effettoAllungamento {
   from {

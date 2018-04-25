@@ -18,6 +18,27 @@
             <img src="img/weatherIcon/icons8-summer-96.png" alt="Sun-image" class="sun">
         </div>
 
+        <!-- Sezione temperatura -->
+        <div class="title-weather-condition">
+            Temperatura
+        </div>
+        <div class="weather-wrapper">
+            <div class="temp-wrapper">
+                <img src="img/weatherIcon/icons8-temperature-96.png" alt="Temperature-image">
+            </div>
+            <div class="weather-info">
+                <div class="weather-item">
+                    <div>{{meteoCtrl.temperature}}° </div>
+                </div>
+                <div class="weather-item">
+                    <div>{{meteoCtrl.weatherDescription}}</div>
+                </div>
+                <div class="weather-item">
+                    <div>{{meteoCtrl.minTemperature}}° / {{meteoCtrl.maxTemperature}}°</div>
+                </div>
+            </div>
+        </div>
+
         <!-- Sezione vento-->
         <div class="title-weather-condition">
             Vento

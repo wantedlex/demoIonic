@@ -43,6 +43,30 @@
         border-bottom: thin solid whitesmoke;
         padding-bottom: 40px;
 
+        .temp-wrapper{
+            width: 10vh;
+            height: 10vh;
+            display: flex;
+
+
+            img{
+                height: 8vh;
+                width: 8vh;
+                animation: effettoZoom 2s infinite alternate;
+
+                @keyframes effettoZoom {
+                    from{
+                        width: 8vh;
+                        height: 8vh;
+                    }
+                    to{
+                        width: 9vh;
+                        height: 9vh;
+                    }
+                }
+            }
+        }
+
         //Wrapper per l'icona del vento
         .wind-wrapper{
             width: 10vh;
@@ -50,7 +74,7 @@
             img{
                 height: 8vh;
                 width: 8vh;
-                animation: effettoAllungamento 1s infinite alternate;
+                animation: effettoAllungamento 2s infinite alternate;
     
                 @keyframes effettoAllungamento {
                     from{
