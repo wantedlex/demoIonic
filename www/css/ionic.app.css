@@ -127,8 +127,8 @@ $dark:                            #444 !default;
 .meteo-view .containerBottom {
   z-index: 1;
   position: absolute;
-  bottom: 0px;
-  height: 70vh;
+  bottom: -30vh;
+  height: 100vh;
   background: #47a8d9;
   width: 100%; }
 
@@ -152,7 +152,7 @@ $dark:                            #444 !default;
     display: flex;
     margin: 0px 20px 50px 20px;
     border-bottom: thin solid whitesmoke;
-    padding-bottom: 20px; }
+    padding-bottom: 40px; }
     .meteo-view ion-content .weather-wrapper .wind-wrapper {
       width: 10vh; }
       .meteo-view ion-content .weather-wrapper .wind-wrapper img {
@@ -166,7 +166,8 @@ $dark:                            #444 !default;
   to {
     width: 9vh; } }
     .meteo-view ion-content .weather-wrapper .humidity-wrapper {
-      overflow: hidden; }
+      overflow: hidden;
+      border-radius: 70%; }
       .meteo-view ion-content .weather-wrapper .humidity-wrapper img {
         width: 8vh;
         animation: effettoCadutaGoccia 3s infinite linear;

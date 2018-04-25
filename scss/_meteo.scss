@@ -2,8 +2,8 @@
   .containerBottom {
     z-index: 1;
     position: absolute;
-    bottom: 0px;
-    height: 70vh;
+    bottom: -30vh;
+    height: 100vh;
     background: rgb(71, 168, 217);
     width: 100%;
   }
@@ -41,7 +41,7 @@
         display: flex;
         margin: 0px 20px 50px 20px;
         border-bottom: thin solid whitesmoke;
-        padding-bottom: 20px;
+        padding-bottom: 40px;
 
         //Wrapper per l'icona del vento
         .wind-wrapper{
@@ -67,6 +67,7 @@
         //Wrapper dell'icona dell'umidità
         .humidity-wrapper{
             overflow: hidden;
+            border-radius: 70%;
             
             img{
                 width: 8vh;

@@ -17,7 +17,7 @@ meteoModule.config(function($stateProvider){
 
 
 // Definizione del controller e delle sue funzionalità
-meteoModule.controller('MeteoController', function(GeolocationService, WeatherService, $log){
+meteoModule.controller('MeteoController', function(GeolocationService, WeatherService, $log, $scope){
     // Variabili interne al controller
     var vm = this;
     var _logPrefix = '[METEO CONTROLLER]';
@@ -33,8 +33,8 @@ meteoModule.controller('MeteoController', function(GeolocationService, WeatherSe
     vm.humidity = 0;
     vm.pressure = 0;
 
-    // Funzione di inizializzazione
-    vm.init = function(){
+    // Recupero informazioni da mostrare nella view
+    vm.loadWeatherInformation = function(){
         GeolocationService.getPosition()
             .then( function (localPosition){                    // Vado a ricavarmi la posizione attuale
                 return WeatherService.getWeather(localPosition.latitudine, localPosition.longitudine);
@@ -51,6 +51,17 @@ meteoModule.controller('MeteoController', function(GeolocationService, WeatherSe
                 $log.debug(_logPrefix + 'Errore', errorLog);
             }
         );
+    };
+
+    // Funzione di inizializzazione della view
+    vm.init = function(){
+        vm.loadWeatherInformation();
+    };
+
+    // Funzione associata al refresh delle informazioni
+    vm.refreshWeatherInformation = function() {
+        vm.loadWeatherInformation();
+        $scope.$broadcast('scroll.refreshComplete');        // Mi permette di dire al refresher che il refresh è stato completato
     };
 
     vm.init();
