@@ -28,13 +28,11 @@
             </div>
             <div class="weather-info">
                 <div class="weather-item">
-                    <div>{{meteoCtrl.temperature}}° </div>
+                    <div class="actual-temperature"> {{meteoCtrl.temperature}}° </div>
                 </div>
                 <div class="weather-item">
-                    <div>{{meteoCtrl.weatherDescription}}</div>
-                </div>
-                <div class="weather-item">
-                    <div>{{meteoCtrl.minTemperature}}° / {{meteoCtrl.maxTemperature}}°</div>
+                    <div class="color-temp-min">{{meteoCtrl.minTemperature}}°</div> /  
+                    <div class="color-temp-max">{{meteoCtrl.maxTemperature}}°</div>
                 </div>
             </div>
         </div>
@@ -52,7 +50,7 @@
                     <div class="title-info">Velocità (m/s):</div>
                     <div>{{meteoCtrl.speedOfWind}} m/s</div>
                 </div>
-                <div class="weather-item">
+                <div class="weather-item" ng-if="meteoCtrldegOfWind">
                     <div class="title-info">Angolo: (deg)</div>
                     <div>{{meteoCtrl.degOfWind}}°</div>
                 </div>

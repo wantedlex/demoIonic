@@ -19,130 +19,143 @@
 
       img {
         &.sun {
-            width: 20vh;
-            height: 20vh;
-            animation: rotation 10s infinite linear;
+          width: 20vh;
+          height: 20vh;
+          animation: rotation 10s infinite linear;
 
-            @keyframes rotation {
-                from {
-                    transform: rotate(0deg);
-                }
-                to {
-                    transform: rotate(359deg);
-                }
+          @keyframes rotation {
+            from {
+              transform: rotate(0deg);
             }
+            to {
+              transform: rotate(359deg);
+            }
+          }
         }
       }
     }
 
-
     // Wrapper della sezione meteo
-    .weather-wrapper{
+    .weather-wrapper {
+      display: flex;
+      margin: 0px 20px 50px 20px;
+      border-bottom: thin solid whitesmoke;
+      padding-bottom: 40px;
+
+      //Wrapper per l'icona della temperatura
+      .temp-wrapper {
+        width: 10vh;
+        height: 10vh;
         display: flex;
-        margin: 0px 20px 50px 20px;
-        border-bottom: thin solid whitesmoke;
-        padding-bottom: 40px;
+        justify-content: center;
+        align-items: center;
 
-        .temp-wrapper{
-            width: 10vh;
-            height: 10vh;
-            display: flex;
+        img {
+          height: 10vh;
+          width: 10vh;
+          animation: effettoZoom 2s infinite alternate;
 
-
-            img{
-                height: 8vh;
-                width: 8vh;
-                animation: effettoZoom 2s infinite alternate;
-
-                @keyframes effettoZoom {
-                    from{
-                        width: 8vh;
-                        height: 8vh;
-                    }
-                    to{
-                        width: 9vh;
-                        height: 9vh;
-                    }
-                }
+          @keyframes effettoZoom {
+            from {
+              width: 8vh;
+              height: 8vh;
             }
-        }
-
-        //Wrapper per l'icona del vento
-        .wind-wrapper{
-            width: 10vh;
-
-            img{
-                height: 8vh;
-                width: 8vh;
-                animation: effettoAllungamento 2s infinite alternate;
-    
-                @keyframes effettoAllungamento {
-                    from{
-                        width: 8vh;
-                    }
-                    to{
-                        width: 9vh;
-                    }
-                    
-                }
+            to {
+              width: 9vh;
+              height: 9vh;
             }
+          }
         }
+      }
 
-        //Wrapper dell'icona dell'umidità
-        .humidity-wrapper{
-            overflow: hidden;
-            border-radius: 70%;
-            
-            img{
-                width: 8vh;
-                animation: effettoCadutaGoccia 3s infinite linear;
-                position: relative;
+      //Wrapper per l'icona del vento
+      .wind-wrapper {
+        width: 10vh;
 
-                @keyframes effettoCadutaGoccia {
-                    from{
-                        top: -12vh;
-                    }
-                    to{
-                        top: 12vh;
-                    }
-                    
-                }
+        img {
+          height: 8vh;
+          width: 8vh;
+          animation: effettoAllungamento 2s infinite alternate;
+
+          @keyframes effettoAllungamento {
+            from {
+              width: 8vh;
             }
-        }
-
-        // Dati da mostrare 
-       .weather-info{
-            display: flex;
-            flex-direction: column;
-            margin-left: 20px;
-            justify-content: space-evenly;
-
-            .weather-item {
-                display: flex;
-                flex-direction: row;
-                color: whitesmoke;
-                font-size: 14pt;
-                font-family: $fontClassic; //"Helvetica Neue", "Roboto", "Segoe UI", sans-serif;  // Nell'attesa di capire perché Gotham non va
-
-                .title-info{
-                    font-weight: bold;
-                    margin-right: 10px;
-                }
+            to {
+              width: 9vh;
             }
+          }
         }
+      }
 
+      //Wrapper dell'icona dell'umidità
+      .humidity-wrapper {
+        overflow: hidden;
+        border-radius: 70%;
+
+        img {
+          width: 8vh;
+          animation: effettoCadutaGoccia 3s infinite linear;
+          position: relative;
+
+          @keyframes effettoCadutaGoccia {
+            from {
+              top: -12vh;
+            }
+            to {
+              top: 12vh;
+            }
+          }
+        }
+      }
+
+      // Dati da mostrare
+      .weather-info {
+        display: flex;
+        flex-direction: column;
+        margin-left: 20px;
+        justify-content: space-evenly;
+
+        .weather-item {
+          display: flex;
+          flex-direction: row;
+          color: whitesmoke;
+          font-size: 14pt;
+          font-family: $fontClassic; //"Helvetica Neue", "Roboto", "Segoe UI", sans-serif;  // Nell'attesa di capire perché Gotham non va
+
+          .title-info {
+            font-weight: bold;
+            margin-right: 10px;
+          }
+
+          // Cambia solo la dimensione del testo per mostrare il numero della temperatura attuale più grande
+          .actual-temperature {
+            font-size: 30pt;
+          }
+
+          //Colore della temperatura minima
+          .color-temp-min {
+            color: rgb(95, 213, 246);
+            margin-right: 5px;
+          }
+
+          // Colore della temperatura massima
+          .color-temp-max {
+            color: rgb(219, 4, 4);
+            margin-left: 5px;
+          }
+        }
+      }
     }
 
-
-
     // Titolo della sezione meteo
-    .title-weather-condition{
-        color: whitesmoke;
-        margin-top: 10px;
-        margin-left: 20px;
-        margin-bottom: 30px;
-        font-size: 2rem;
-        font-family: $fontThin;
+    .title-weather-condition {
+      color: whitesmoke;
+      margin-top: 10px;
+      margin-left: 20px;
+      margin-bottom: 30px;
+      font-size: 2rem;
+      font-family: $fontThin;
     }
   }
 }

@@ -156,10 +156,12 @@ $dark:                            #444 !default;
     .meteo-view ion-content .weather-wrapper .temp-wrapper {
       width: 10vh;
       height: 10vh;
-      display: flex; }
+      display: flex;
+      justify-content: center;
+      align-items: center; }
       .meteo-view ion-content .weather-wrapper .temp-wrapper img {
-        height: 8vh;
-        width: 8vh;
+        height: 10vh;
+        width: 10vh;
         animation: effettoZoom 2s infinite alternate; }
 
 @keyframes effettoZoom {
@@ -208,6 +210,14 @@ $dark:                            #444 !default;
         .meteo-view ion-content .weather-wrapper .weather-info .weather-item .title-info {
           font-weight: bold;
           margin-right: 10px; }
+        .meteo-view ion-content .weather-wrapper .weather-info .weather-item .actual-temperature {
+          font-size: 30pt; }
+        .meteo-view ion-content .weather-wrapper .weather-info .weather-item .color-temp-min {
+          color: #5fd5f6;
+          margin-right: 5px; }
+        .meteo-view ion-content .weather-wrapper .weather-info .weather-item .color-temp-max {
+          color: #db0404;
+          margin-left: 5px; }
   .meteo-view ion-content .title-weather-condition {
     color: whitesmoke;
     margin-top: 10px;

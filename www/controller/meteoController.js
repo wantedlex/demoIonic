@@ -37,10 +37,11 @@ meteoModule.controller('MeteoController', function(GeolocationService, WeatherSe
     vm.maxTemperature = 0;
 
     // Recupero informazioni da mostrare nella view
-    vm.loadWeatherInformation = function(){
+    var loadWeatherInformation = function(){
         GeolocationService.getPosition()
             .then( function (localPosition){                    // Vado a ricavarmi la posizione attuale
-                return WeatherService.getWeather(localPosition.latitudine, localPosition.longitudine);
+                //return WeatherService.getWeather(localPosition.latitudine, localPosition.longitudine);
+                return WeatherService.getWeather(38.54, -84.84);
             })
             .then( function(localWeather){                      // Vado a ricavarmi il meteo della posizione attuale ricavata in precedenza
                 vm.loading = false;
@@ -61,15 +62,19 @@ meteoModule.controller('MeteoController', function(GeolocationService, WeatherSe
 
     // Funzione di inizializzazione della view
     vm.init = function(){
-        vm.loadWeatherInformation();
+        loadWeatherInformation();
     };
 
     // Funzione associata al refresh delle informazioni
     vm.refreshWeatherInformation = function() {
-        vm.loadWeatherInformation();
+        loadWeatherInformation();
         $scope.$broadcast('scroll.refreshComplete');        // Mi permette di dire al refresher che il refresh è stato completato
     };
 
+
+    // Funzione che mi permette di determinare
+
+    //Inizializzo la view
     vm.init();
 });
 
