@@ -26,7 +26,7 @@ meteoModule.controller('MeteoController', function(GeolocationService, WeatherSe
     
     // Definizione variabili di controller esposte alla view
     vm.loading = true;
-    vm.city = 'Milano, MI, Italia';
+    vm.city = 'Rossano CS, Italia';
     vm.weatherDescription = 'Rain';
     vm.speedOfWind = 0;
     vm.degOfWind = 0;
@@ -40,11 +40,9 @@ meteoModule.controller('MeteoController', function(GeolocationService, WeatherSe
     var loadWeatherInformation = function(){
         GeolocationService.getPosition()
             .then( function (localPosition){                    // Vado a ricavarmi la posizione attuale
-                //return WeatherService.getWeather(localPosition.latitudine, localPosition.longitudine);
-                return WeatherService.getWeather(38.54, -84.84);
+                return WeatherService.getWeather(localPosition.latitudine, localPosition.longitudine);
             })
             .then( function(localWeather){                      // Vado a ricavarmi il meteo della posizione attuale ricavata in precedenza
-                vm.loading = false;
                 vm.weatherDescription = localWeather.weather[0].description;
                 vm.speedOfWind = localWeather.wind.speed;
                 vm.degOfWind = localWeather.wind.deg;
@@ -53,6 +51,12 @@ meteoModule.controller('MeteoController', function(GeolocationService, WeatherSe
                 vm.temperature = Math.floor(localWeather.main.temp);
                 vm.minTemperature = Math.floor(localWeather.main.temp_min);
                 vm.maxTemperature = Math.floor(localWeather.main.temp_max);
+
+                return GeolocationService.reverseGeocoding(localWeather.coord.lat, localWeather.coord.lon);
+            })
+            .then(function(result){
+                vm.loading = false;
+                vm.city = result.indirizziFormattati.cittaEstesa;
             })
             .catch(function(errorLog) {
                 $log.debug(_logPrefix + 'Errore', errorLog);
