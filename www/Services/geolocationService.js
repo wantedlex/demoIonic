@@ -35,7 +35,10 @@ geolocationModule.factory("GeolocationService", function($log, $q, $http) {
     var deferred = $q.defer();
     var url = 'https://maps.googleapis.com/maps/api/geocode/json?latlng=' + latitude + ',' + longitude + '&sensor=true&key=AIzaSyD-fxKwF1sWWcV49zr9q0cT97l6fIqZj-E';
     $http.get(url).then(function(results){
-        var jsonRisultati = {
+        var jsonRisultati = {};
+        $log.debug(_logPrefix + 'Reverse Geocoding', results);
+        if(results.data.status === 'OK'){
+            jsonRisultati = {
                 generici: {
                     acronimoStato: results.data.results[0].address_components[6].short_name,
                     stato: results.data.results[8].formatted_address,
@@ -54,8 +57,12 @@ geolocationModule.factory("GeolocationService", function($log, $q, $http) {
                     areaCittadina: results.data.results[6].formatted_address,
                     regioneEstesa: results.data.results[7].formatted_address
                 }
-        };
-        deferred.resolve(jsonRisultati);
+            };
+            deferred.resolve(jsonRisultati);
+        } else {
+            deferred.reject('Status isn\'t correct!');
+        }
+        
     })
     .catch(function(){
         deferred.reject(_logPrefix + 'errore di reverse geocoding');
