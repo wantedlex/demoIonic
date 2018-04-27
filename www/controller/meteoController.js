@@ -43,7 +43,7 @@ meteoModule.controller('MeteoController', function(GeolocationService, WeatherSe
                 return WeatherService.getWeather(localPosition.latitudine, localPosition.longitudine);
             })
             .then( function(localWeather){                      // Vado a ricavarmi il meteo della posizione attuale ricavata in precedenza
-                vm.weatherDescription = localWeather.weather[0].description;
+                vm.weatherDescription = localWeather.weather[0].description;    
                 vm.speedOfWind = localWeather.wind.speed;
                 vm.degOfWind = localWeather.wind.deg;
                 vm.humidity = localWeather.main.humidity;
