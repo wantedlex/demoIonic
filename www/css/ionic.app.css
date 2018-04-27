@@ -125,7 +125,7 @@ $dark:                            #444 !default;
     color: #666; }
 
 .meteo-view .containerBottom {
-  z-index: 1;
+  z-index: -1;
   position: absolute;
   bottom: -30vh;
   height: 100vh;
