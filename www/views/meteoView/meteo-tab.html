@@ -50,9 +50,13 @@
                     <div class="title-info">Velocità (m/s):</div>
                     <div>{{meteoCtrl.speedOfWind}} m/s</div>
                 </div>
-                <div class="weather-item" ng-if="meteoCtrldegOfWind">
+                <div class="weather-item" ng-if="meteoCtrl.degOfWind">
                     <div class="title-info">Angolo: (deg)</div>
-                    <div>{{meteoCtrl.degOfWind}}°</div>
+                    <div>{{meteoCtrl.degOfWind}}° - {{meteoCtrl.directionOfWind}}</div>
+                </div>
+                <div class="weather-item" ng-if="meteoCtrl.degOfWind">
+                    <div class="title-info">Nome del vento:</div>
+                    <div>{{meteoCtrl.nameOfWind}}</div>
                 </div>
             </div>
         </div>

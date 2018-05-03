@@ -17,7 +17,12 @@ meteoModule.config(function($stateProvider){
 
 
 // Definizione del controller e delle sue funzionalità
-meteoModule.controller('MeteoController', function(GeolocationService, WeatherService, $log, $scope){
+meteoModule.controller('MeteoController', function(
+    GeolocationService,
+    WeatherService, 
+    $log, 
+    $scope,
+    ConvertDegDirectionService){
     // Variabili interne al controller
     var vm = this;
     var _logPrefix = '[METEO CONTROLLER]';
@@ -30,6 +35,8 @@ meteoModule.controller('MeteoController', function(GeolocationService, WeatherSe
     vm.weatherDescription = 'Rain';
     vm.speedOfWind = 0;
     vm.degOfWind = 0;
+    vm.directionOfWind = '';
+    vm.nameOfWind = '';
     vm.humidity = 0;
     vm.pressure = 0;
     vm.temperature = 0;
@@ -52,11 +59,15 @@ meteoModule.controller('MeteoController', function(GeolocationService, WeatherSe
                 vm.minTemperature = Math.floor(localWeather.main.temp_min);
                 vm.maxTemperature = Math.floor(localWeather.main.temp_max);
 
+                vm.directionOfWind = ConvertDegDirectionService.conversioneGradiInDirezione(vm.degOfWind);
+                vm.nameOfWind = ConvertDegDirectionService.conversioneGradiInNome(vm.degOfWind);
+
                 return GeolocationService.reverseGeocoding(localWeather.coord.lat, localWeather.coord.lon);
             })
             .then(function(result){
                 vm.loading = false;
                 vm.city = result.indirizziFormattati.cittaEstesa;
+                $log.debug(_logPrefix + ' ho terminato tutte le letture asincrone');
             })
             .catch(function(errorLog) {
                 $log.debug(_logPrefix + 'Errore', errorLog);
